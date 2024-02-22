@@ -1,7 +1,7 @@
 const express = require('express');
 const summarizeText = require('./summarize.js');
 const app = express();
-const port = 3000;
+const port = 3002;
 
 // Parses JSON bodies (as sent by API clients)
 app.use(express.json());
@@ -10,19 +10,15 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Handle POST requests to the '/summarize' endpoint
-
-app.post('/summarize', (req, res) => {
- // get the text_to_summarize property from the request body
-  const text = req.body.text_to_summarize;
-
- // call your summarizeText function, passing in the text from the request
-  summarizeText(text) 
-    .then(response => {
-       res.send(response); // Send the summary text as a response to the client
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
+app.post('/summarize', async (req, res) => {
+  try {
+    const text = req.body.text_to_summarize;
+    const summary = await summarizeText(text);
+    res.send(summary);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 // Start the server
