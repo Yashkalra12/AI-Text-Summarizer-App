@@ -1,6 +1,6 @@
 **AI Text Summarizer App**
 
-![AI Text Summarizer App](https://yourimageurl.com)
+[AI Text Summarizer App]
 
 **Tech Stack:**
 - Express
