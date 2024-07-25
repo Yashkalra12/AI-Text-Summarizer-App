@@ -1,7 +1,5 @@
 **AI Text Summarizer App**
 
-[AI Text Summarizer App]
-
 **Tech Stack:**
 - Express
 - Node.js
@@ -21,8 +19,7 @@ This AI Text Summarizer App utilizes cutting-edge technologies to condense lengt
 [
 (https://ai-text-summarizer-app.vercel.app/)
 
----
+Last reviewed july 2024 need to fix it 
 
-Feel free to customize the README with additional details, images, or any other information to make your project stand out!
 
 
